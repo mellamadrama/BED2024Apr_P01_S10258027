@@ -66,23 +66,4 @@ const books = [
   
 module.exports = Book;
 
-class Book {
-    static getAllBooks() {
-      // ... logic to retrieve all books
-    }
-}
   
-  // Calling the static method without creating an instance
-const allBooks = Book.getAllBooks();
-
-// In a module file (e.g., book.js)
-function greet(name) {
-    console.log(`Hello, ${name}!`);
-}
-  
-module.exports = greet;
-  
-  // In another file (e.g., app.js)
-const greetFunction = require("./book.js"); // Import the exported function
-  
-greetFunction("Alice"); // Call the imported function

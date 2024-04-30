@@ -1,7 +1,5 @@
 const Book = require("../models/book");
 
-const Book = require("../models/book");
-
 const getAllBooks = async (req, res) => {
   try {
     const books = await Book.getAllBooks();
@@ -75,22 +73,3 @@ module.exports = {
   updateBook,
   deleteBook,
 };
-
-const importedModule = require("./myModule.js"); // Import a local module
-
-const http = require("http"); // Import a built-in module
-
-async function fetchData() {
-    const response = await fetch("https://api.example.com/data");
-    const data = await response.json();
-    console.log(data);
-}
-  
-fetchData();
-
-try {
-    const result = somethingThatMightCauseAnError();
-    console.log(result);
-  } catch (error) {
-    console.error("An error occurred:", error.message);
-  }
