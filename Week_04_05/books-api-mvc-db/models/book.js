@@ -1,3 +1,6 @@
+const sql = require("mssql");
+const dbConfig = require("../dbConfig");
+
 class Book {
     constructor(id, title, author) {
       this.id = id;
