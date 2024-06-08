@@ -4,7 +4,7 @@ const getAllBooks = async (req, res) => {
   try {
     const books = await Book.getAllBooks();
     res.json(books);
-  } catch (error) {
+  } catch (error) { // hello world
     console.error(error);
     res.status(500).send("Error retrieving books");
   }

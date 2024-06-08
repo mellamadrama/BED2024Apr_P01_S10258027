@@ -26,8 +26,18 @@ app.delete("/books/:id", booksController.deleteBook); // DELETE for deleting boo
 
 app.post("/users", usersController.createUser); // Create user
 app.get("/users", usersController.getAllUsers); // Get all users
+app.get("/users/with-books", usersController.getUsersWithBooks);
 app.get("/users/search", usersController.searchUsers);
 app.get("/users/:id", usersController.getUserById); // Get user by ID
+
+/* 
+/users/:id
+- /users/1
+- /users/no
+- /users/idk
+- /users/with-books
+*/
+
 app.put("/users/:id", usersController.updateUser); // Update user
 app.delete("/users/:id", usersController.deleteUser); // Delete user
 
@@ -41,7 +51,7 @@ app.listen(port, async () => {
     // Terminate the application with an error code (optional)
     process.exit(1); // Exit with code 1 indicating an error
   }
-
+  // if you see this during the exam tmr, hi :)
   console.log(`Server listening on port ${port}`);
 });
 
@@ -53,4 +63,3 @@ process.on("SIGINT", async () => {
   console.log("Database connection closed");
   process.exit(0); // Exit with code 0 indicating successful shutdown
 });
-

@@ -79,6 +79,16 @@ async function searchUsers(req, res) {
     }
 }
 
+async function getUsersWithBooks(req, res) {
+  try {
+    const users = await User.getUsersWithBooks();
+    res.json(users);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Error fetching users with books" });
+  }
+}
+
 module.exports = {
   getAllUsers,
   getUserById,
@@ -86,4 +96,5 @@ module.exports = {
   updateUser,
   deleteUser,
   searchUsers,
+  getUsersWithBooks,
 };
